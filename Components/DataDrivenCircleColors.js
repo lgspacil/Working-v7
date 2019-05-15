@@ -6,6 +6,8 @@ import sheet from '../styles/sheet';
 import BaseExamplePropTypes from './common/BaseExamplePropTypes';
 import Page from './common/Page';
 
+import smileyFaceGeoJSON from '../assets/smiley_face.json';
+
 const styles = MapboxGL.StyleSheet.create({
   circles: {
     circleRadius: MapboxGL.StyleSheet.camera(
@@ -27,6 +29,12 @@ const styles = MapboxGL.StyleSheet.create({
       'ethnicity',
       MapboxGL.InterpolationMode.Categorical,
     ),
+  },
+  smileyFace: {
+    fillAntialias: true,
+    fillOpacity: 0.1,
+    fillColor: 'green',
+    fillOutlineColor: 'black',
   },
 });
 
@@ -59,10 +67,10 @@ class DataDrivenCircleColors extends React.PureComponent {
           <MapboxGL.ShapeSource id="smileyFaceSource" shape={smileyFaceGeoJSON}>
             <MapboxGL.FillLayer
               id="smileyFaceFill"
-              style={layerStyles.smileyFace}
+              style={styles.smileyFace}
             />
           </MapboxGL.ShapeSource>
-          
+
         </MapboxGL.MapView>
       </Page>
     );

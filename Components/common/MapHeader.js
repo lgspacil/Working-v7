@@ -22,6 +22,7 @@ class MapHeader extends React.PureComponent {
     statusBarColor: PropTypes.string,
     statusBarTextTheme: PropTypes.string,
     onBack: PropTypes.func,
+    onLogOutApp: PropTypes.func
   };
 
   static defaultProps = {
@@ -48,6 +49,7 @@ class MapHeader extends React.PureComponent {
           color: colors.secondary.white,
         }}
         centerComponent={{text: this.props.label, style: styles.label}}
+        rightComponent={{ icon: 'exit-to-app', color: '#fff', onPress: this.props.onLogOutApp }}
       />
     );
   }

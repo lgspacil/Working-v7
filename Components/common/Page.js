@@ -21,6 +21,7 @@ class Page extends React.Component {
           statusBarTextTheme={'light-content'}
           label={this.props.label}
           onBack={this.props.onDismissExample}
+          onLogOutApp={this.props.onLogOutApp}
         />
 
         {this.props.children}
